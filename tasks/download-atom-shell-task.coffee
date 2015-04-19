@@ -126,7 +126,7 @@ module.exports = (grunt) ->
       return
 
     # Request the assets.
-    github = new GitHub({repo: 'atom/atom-shell', token})
+    github = new GitHub({repo: 'atom/electron', token})
     github.getReleases tag_name: version, (error, releases) ->
       unless releases?.length > 0
         grunt.log.error "Cannot find atom-shell #{version} from GitHub", error
@@ -187,7 +187,7 @@ module.exports = (grunt) ->
       return done()
 
     # Request the assets.
-    github = new GitHub({repo: 'atom/atom-shell', token})
+    github = new GitHub({repo: 'atom/electron', token})
     github.getReleases tag_name: versionWithChromedriver, (error, releases) ->
       unless releases?.length > 0
         grunt.log.error "Cannot find atom-shell #{versionWithChromedriver} from GitHub", error
